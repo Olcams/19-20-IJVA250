@@ -19,19 +19,17 @@ public class HomeController {
 
     @Autowired
     private ClientService clientService;
-
     @Autowired
-    private FactureService FactureService;
-
+    private FactureService factureService;
 
     @GetMapping("/")
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView("home");
 
-        List<Client> clients = clientService.findAllClients();
-        modelAndView.addObject("clients", clients);
+        List<Client> toto = clientService.findAllClients();
+        modelAndView.addObject("clients", toto);
 
-        List<Facture> factures = FactureService.findAllfacture();
+        List<Facture> factures = factureService.findAllFactures();
         modelAndView.addObject("factures", factures);
 
         return modelAndView;

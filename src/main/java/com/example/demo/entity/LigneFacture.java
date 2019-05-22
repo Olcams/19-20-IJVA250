@@ -5,6 +5,23 @@ import javax.persistence.*;
 @Entity
 public class LigneFacture {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @ManyToOne
+    private Facture facture;
+
+    @ManyToOne
+    private Article article;
+
+    @Column
+    private int quantite;
+
+    public Long getId() {
+        return id;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -33,21 +50,7 @@ public class LigneFacture {
         this.quantite = quantite;
     }
 
-    @Id
-    @GeneratedValue
-    private Long id;
-
-    @ManyToOne
-    private Facture facture;
-
-    @ManyToOne
-    private Article article;
-
-    @Column
-    private int quantite;
-
-
-    public Long getId() {
-        return id;
+    public Double getSousTotal() {
+        return getArticle().getPrix() * quantite;
     }
 }
