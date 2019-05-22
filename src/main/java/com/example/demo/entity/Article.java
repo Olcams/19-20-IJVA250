@@ -1,11 +1,7 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
-/**
- * Created by Alexandre on 09/04/2018.
- */
 @Entity
 public class Article {
 

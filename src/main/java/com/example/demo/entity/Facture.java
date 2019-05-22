@@ -8,7 +8,7 @@ public class Facture {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long Id;
 
     @ManyToOne
     private Client client;
@@ -18,11 +18,11 @@ public class Facture {
 
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        Id = id;
     }
 
     public Client getClient() {
@@ -41,11 +41,13 @@ public class Facture {
         this.ligneFactures = ligneFactures;
     }
 
-    public Double getTotal() {
+    public Double getTotal(){
         Double total = 0.0;
-        for (LigneFacture ligneFacture : ligneFactures) {
+        for(LigneFacture ligneFacture : ligneFactures) {
             total = total + ligneFacture.getSousTotal();
         }
+
         return total;
     }
+
 }

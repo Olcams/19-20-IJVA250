@@ -132,7 +132,6 @@ public class ExportController {
             Sheet sheet = workbook.createSheet(client.getNom());
             Row headerRow = sheet.createRow(0);
 
-            // Paramétre Nom, Prenom etc...
             Cell cellId = headerRow.createCell(0);
             cellId.setCellValue("Id");
 
@@ -145,9 +144,7 @@ public class ExportController {
             Cell cellDateDeNaissance = headerRow.createCell(3);
             cellDateDeNaissance.setCellValue("Date de naissance");
 
-            // Détails du client
             Row row = sheet.createRow(1);
-
             Cell id = row.createCell(0);
             id.setCellValue(client.getId());
 
@@ -222,8 +219,6 @@ public class ExportController {
                 cellPrixTotal.setCellValue(facture.getTotal());
                 cellPrixTotal.setCellStyle(styleResultat);
             }
-
-
 
         }
         workbook.write(response.getOutputStream());

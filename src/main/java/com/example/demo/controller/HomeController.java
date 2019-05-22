@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 /**
- * Controller principale pour affichage des clients / factures sur la page d'acceuil.
+ * Affichage des clients / factures sur la page d'acceuil.
  */
 @Controller
 public class HomeController {
